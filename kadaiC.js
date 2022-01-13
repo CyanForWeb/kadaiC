@@ -10,7 +10,6 @@ function clock(){
   var hh = now.getHours(); //現在の「時」を取得
   var mm = now.getMinutes(); //現在の「分」を取得
   var ss = now.getSeconds(); //現在の「秒」を取得
-  var msg = "現在時刻は、"+hh+":"+mm+":"+ss+"です。";
   
   //桁が1桁の場合、前に「0」をつける（三項演算子）
   hh = hh<10? "0"+hh:hh;
@@ -21,5 +20,5 @@ function clock(){
   let result = document.getElementById("result");
   
   //現在の時刻をpタグに表示
-  result.textContent = msg;
+  result.textContent = "現在時刻は、"+hh+":"+mm+":"+ss+"です。";
 }
