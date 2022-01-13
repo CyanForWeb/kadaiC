@@ -7,7 +7,7 @@ function start(){
 function clock(){
   //現在の日時を取得
   let now = new Date();
-  let hh = new.getHours(); //現在の「時」を取得
+  let hh = now.getHours(); //現在の「時」を取得
   let mm = now.getMinutes(); //現在の「分」を取得
   let ss = now.getSeconds(); //現在の「秒」を取得
   
