@@ -5,7 +5,7 @@ function clock(){
   var now = new Date(); //現在の日時を得る
   var year = now.getFullYear();
   var month = now.getMonth()+1;
-  var date = now.getDate();
+  var date = now.getDay();
   var hour = now.getHours(); //現在の「時」を取得
   var min = now.getMinutes(); //現在の「分」を取得
   var sec = now.getSeconds(); //現在の「秒」を取得
