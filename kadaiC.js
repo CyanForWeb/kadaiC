@@ -1,24 +1,26 @@
-//ページがロードされた時に自動的に実行される関数
-function start(){
-  //1秒ごとに関数clockを実行
-  window.setInterval( clock, 1000);
-}
-//時刻を表示する関数
 function clock(){
+//時刻を表示する関数
   //現在の日時を取得
+  var myDay = new Array("日","月","火","水","木","金","土");
   var now = new Date(); //現在の日時を得る
-  var hh = now.getHours(); //現在の「時」を取得
-  var mm = now.getMinutes(); //現在の「分」を取得
-  var ss = now.getSeconds(); //現在の「秒」を取得
+  var year = now.getFullYear();
+  var month = now.getMonth()+1;
+  var date = now.getDate();
+  var hour = now.getHours(); //現在の「時」を取得
+  var min = now.getMinutes(); //現在の「分」を取得
+  var sec = now.getSeconds(); //現在の「秒」を取得
   
   //桁が1桁の場合、前に「0」をつける（三項演算子）
-  hh = hh<10? "0"+hh:hh;
-  mm = mm<10? "0"+mm:mm;
-  ss = ss<10? "0"+ss:ss;
+ if(hour<10){hour="0"+hour;}
+   if(min<10){min="0"+min;}
+   if(sec<10){sec="0"+sec;}
   
   //時刻を表示するpタグをDOMツリーから検索
-  let result = document.getElementById("result");
+  var clock = document.getElementById("clock");
   
   //現在の時刻をpタグに表示
-  result.textContent = "現在時刻は、"+hh+":"+mm+":"+ss+"です。";
+  clock.textContent = year + '年' + month + '月' + date + '日' + '（' + myDay[day] + '曜日）'  + hour + '時' + min + '分' + sec + '秒';
+  
+    //1秒ごとに関数clockを実行
+  window.setTimetout("clock()", 1000);
 }
